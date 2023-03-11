@@ -53,8 +53,8 @@ class database {
         });
     };
 
-    read(listOfcoltSelect,colName,condition){  //listOfcoltSelect=[];
-        let listOfcol=listOfcoltSelect.join(",");
+    read(listOfColToSelect,colName,condition){  //listOfcoltSelect=[];
+        let listOfcol=listOfColToSelect.join(",");
         const querys=`SELECT ${listOfcol} from railway.${this.tableName} WHERE ${colName}='${condition}';`;
         this.con.query(querys,(error,result)=>{
             if(error){
